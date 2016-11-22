@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>2610 Blog Database</title>
+    <title>2610 - New Post</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash" rel="stylesheet">
@@ -17,27 +17,27 @@
           <a href='/'><button id="home-btn">Home</button></a>
         </div>
         <div id="new-post">
-          <a href='/new'><button id="new-post-btn">New Post</button></a>
+          <button id="new-post-btn">New Post</button>
         </div>
       </div>
     </header>
     <div class="container">
       <div class="row">
         <div class="col-md-offset-2 col-md-7">
-          <% data.forEach(function(user){ %>
-            <div class="post-box">
-              <div class="post-title-box">
-                <h2 id="post-title"><%= user.title %></h2>
-                <span style="font-weight: bold;"><%= user.date %></span>
-              </div>
-              <div id="post-text">
-                <%= user.post %>
-              </div>
-              <a href='/users/<%= user.id %>/edit'>Edit</a> |
-              <a href='/users/<%= user.id %>'>Delete</a> |
-              <a href='/show/<%= user.id %>'>Show</a>
+          <div class="post-box">
+            <div>
+              <h2 style="font-family: 'Ravi Prakash', cursive; margin-bottom: 25px;">New Blog Post</h2>
             </div>
-          <% }) %>
+            <form action='/new' method="post">
+                Title: <input type="text" name="blogTitle" placeholder="Title of Post">
+                Date: <input type="text" name="postDate" placeholder="Date of Post">
+              <div id="post-text">
+                Post:
+                <textarea rows="25" cols="75" name="blogPost" placeholder="Type up your new post here."></textarea>
+              </div>
+              <input id="save-btn" type="submit" value="Save">
+            </form>
+          </div>
         </div>
       </div>
     </div>

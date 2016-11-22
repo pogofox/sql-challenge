@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>2610 Blog Database</title>
+    <title>2610 - Show Post</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash" rel="stylesheet">
@@ -24,7 +24,6 @@
     <div class="container">
       <div class="row">
         <div class="col-md-offset-2 col-md-7">
-          <% data.forEach(function(user){ %>
             <div class="post-box">
               <div class="post-title-box">
                 <h2 id="post-title"><%= user.title %></h2>
@@ -37,7 +36,6 @@
               <a href='/users/<%= user.id %>'>Delete</a> |
               <a href='/show/<%= user.id %>'>Show</a>
             </div>
-          <% }) %>
         </div>
       </div>
     </div>
